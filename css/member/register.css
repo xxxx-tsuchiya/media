@@ -1,0 +1,170 @@
+@charset "utf-8";
+
+#navi_header #action_area{
+  display: none;
+}
+
+#register_form_area{
+  width: 820px;
+  margin: 0 auto 20px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 16px;
+  padding-bottom: 112px;
+}
+
+#register_form_area h1{
+  width: 80%;
+  color: #000000;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 20px;
+  margin: 0 auto 20px;
+}
+#register_form_area .form_stage{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  justify-content: center;
+  position: relative;
+}
+#register_form_area .form_stage span{
+  padding: 32px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+}
+#register_form_area .form_stage .input_stage{
+  background-color: #000000;
+  color: #ffffff;
+}
+#register_form_area .form_stage .input_stage::after,
+#register_form_area .form_stage .check_stage::after{
+  content: "";
+  border-left: 21px solid #000000;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+}
+#register_form_area .form_stage .input_stage::after{
+  left: 173px;
+}
+#register_form_area .form_stage .check_stage,
+#register_form_area .form_stage .thank_stage{
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+#register_form_area .form_stage .check_stage::before{
+  content: "";
+  border-left: 21px solid #ffffff;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 333px;
+  z-index: 1;
+}
+#register_form_area .form_stage .check_stage::after{
+  left: 334px;
+}
+
+#register_form_area p.form_message{
+  width: 80%;
+  border-bottom: 1px solid #000000;
+  margin: 0 auto 20px;
+  padding: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#register_form_area #input_area_wrapper{
+  width: 80%;
+  background-color: #EBEBEB;
+  margin: 0 auto 32px;
+  border-radius: 8px;
+  padding: 16px 0;
+}
+
+#register_form_area #input_area_wrapper .input_area{
+  width: 80%;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+#register_form_area #input_area_wrapper .input_area p{
+  padding: 16px 0;
+  border-bottom: 1px solid #000000;
+}
+#register_form_area #input_area_wrapper .input_area input{
+  /*border-radius: 4px;*/
+}
+#register_form_area #input_area_wrapper .input_area #name1,
+#register_form_area #input_area_wrapper .input_area #name2,
+#register_form_area #input_area_wrapper .input_area #mail,
+#register_form_area #input_area_wrapper .input_area #password,
+#register_form_area #input_area_wrapper .input_area #check_password{
+  width: 50%;
+  padding: 8px 0.5em;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+#register_form_area #input_area_wrapper .input_area select{
+  width: 40%;
+  padding: 12px 0.5em;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+#register_form_area #input_area_wrapper .input_area .name1:after,
+#register_form_area #input_area_wrapper .input_area .birth_year:after,
+#register_form_area #input_area_wrapper .input_area .birth_month:after,
+#register_form_area #input_area_wrapper .input_area .birth_day:after,
+#register_form_area #input_area_wrapper .input_area .mail:after,
+#register_form_area #input_area_wrapper .input_area .password:after,
+#register_form_area #input_area_wrapper .input_area .w_m:after,
+#register_form_area #input_area_wrapper .input_area .check_password:after{
+  content: "必須";
+  margin-left: 12px;
+  background-color: #FF4343;
+  color: #fff;
+  padding: 4px 8px;
+}
+
+/* バリデーションチェック用のクラス */
+#register_form_area #input_area_wrapper .input_area .not_input{
+  background-color: #FFB2B2;
+  border: 2px solid #df0017;
+}
+#register_form_area #input_area_wrapper .input_area .ok_input{
+  background-color: #B0FFDA !important;
+  border: 2px solid #43FFA8;
+}
+
+.submit{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.submit #register_input{
+  width: 400px;
+  background-color: #4268FF;
+  color: #fff;
+  text-align: center;
+  padding: 24px 32px;
+  font-size: 20px;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+.submit #register_input:hover{
+  opacity: 0.6;
+}
+.submit .not_submit{
+  background-color: #FFB2B2;
+}

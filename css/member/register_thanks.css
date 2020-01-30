@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+#navi_header #action_area{
+  display: none;
+}
+
+#register_form_area{
+  width: 820px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  opacity: 0.8;
+  border-radius: 16px;
+  padding-bottom: 20px;
+}
+
+#register_form_area h1{
+  width: 80%;
+  color: #000000;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 20px;
+  margin: 0 auto 20px;
+}
+#register_form_area .form_stage{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  -moz-display: flex;
+  -webkit-display: flex;
+  justify-content: center;
+  position: relative;
+}
+#register_form_area .form_stage span{
+  padding: 32px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+}
+#register_form_area .form_stage .input_stage,
+#register_form_area .form_stage .check_stage,
+#register_form_area .form_stage .thank_stage{
+  background-color: #000000;
+  color: #ffffff;
+}
+#register_form_area .form_stage .input_stage::after,
+#register_form_area .form_stage .check_stage::after{
+  content: "";
+  border-left: 21px solid #000000;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+#register_form_area .form_stage .input_stage::before,
+#register_form_area .form_stage .check_stage::before{
+  content: "";
+  border-left: 21px solid #ffffff;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+#register_form_area .form_stage .input_stage::before{
+  left: 174px;
+}
+#register_form_area .form_stage .check_stage::before{
+  left: 335px;
+}
+#register_form_area .form_stage .input_stage::after{
+  left: 173px;
+}
+#register_form_area .form_stage .check_stage,
+#register_form_area .form_stage .thank_stage{
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+#register_form_area .form_stage .check_stage::after{
+  left: 334px;
+}
+
+#register_form_area p.form_message{
+  width: 80%;
+  border-bottom: 1px solid #000000;
+  margin: 0 auto 20px;
+  padding: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.link_top{
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.link_top #link_top_a button{
+  background-color: #c0c0c0;
+  color: #ffffff;
+  padding: 24px 32px;
+  font-size: 20px;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+}
+.link_top #link_top_a button:hover{
+  background-color: #9C9C9C;
+}
