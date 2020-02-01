@@ -11,8 +11,12 @@
 			}
 			return $mysqli;
 		}
+		function DatabaseClose($mysqli){
+			mysqli_close($mysqli);
+		}
 
-		function GetForm($mysqli){
+		function GetForm(){
+			$mysqli = $this->DatabaseConnect();
 			$dbSQL			=	'';
 			$dbSQL			= 'SELECT * ';
 			$dbSQL 	 	 .= '	FROM ' . DTB_FORM;
@@ -25,13 +29,14 @@
 					$i++;
     		}
     		// 結果セットを閉じる
-    		$retData->close();
+    		$this->DatabaseClose($mysqli);
 			}
 
 			return $sqlData;
 		}
 
-		function SignUp($mysqli, $arrGetData){
+		function SignUp($arrGetData){
+			$mysqli = $this->DatabaseConnect();
 			$member_name1 	= $mysqli->real_escape_string($arrGetData['postData']['name1']);
 			$member_name2		= $mysqli->real_escape_string($arrGetData['postData']['name2']);
 			$birth_year 		= $mysqli->real_escape_string($arrGetData['postData']['birth_year']);
@@ -62,11 +67,44 @@
 			$query .= 								 '"' . $w_m 		     . '"';
 			$query .= ')';
 
+			$this->DatabaseClose($mysqli);
+
 			echo $query;
 
 			$result		= $mysqli->query($query);
 
 			return $result;
+		}
+
+		function SignIn($arrGetData){
+			$mysqli = $this->DatabaseConnect();
+			$email				= $mysqli->real_escape_string($arrGetData['postData']['mail']);
+			$password			= $mysqli->real_escape_string($arrGetData['postData']['password']);
+
+			// 入力された情報がデータベース内に存在するかを確認
+			$query	= 'SELECT * FROM ' . DTB_MEMBER_INFO;
+			$query .= '	WHERE mail_address = ' . $email;
+			$result = $mysqli->query($query);
+
+			// 暗号されているパスワードの取り出し
+			while($row = $result->fetch_assoc()){
+				$db_hashed_pwd = $row['password'];
+				$db_email			 = $row['mail_address'];
+			}
+
+			// データベースの切断
+			$this->DatabaseClose($mysqli);
+
+			if(password_verify($password, $db_hashed_pwd)){
+				$_SESSION['user']	= $db_email;
+				header("Location: index.php");
+				exit();
+			}else{
+				$result_message = 'ログインに失敗しました';
+			}
+
+			return $result_message;
+
 		}
 
 	}

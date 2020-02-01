@@ -19,8 +19,7 @@
   $objNavi->add_js            = '<script src="/js/register/register.js"></script>' . "\n";
 
   // DB接続
-  $mysqli = $objDB->DatabaseConnect();
-  $arrData['GetFormData']     = $objDB->GetForm($mysqli);
+  $arrData['GetFormData']     = $objDB->GetForm();
   session_start();
   if(isset($_SESSION['user']) != ""){
     // ログイン済みの場合はリダイレクト

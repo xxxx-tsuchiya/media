@@ -21,6 +21,14 @@
   // DB接続
   $mysqli = $objDB->DatabaseConnect();
   session_start();
+  if(isset($_SESSION['user']) != ''){
+    header("Location: index.php");
+  }
+
+  // ログインボタンがクリックされた時に実行する
+  if(isset($_POST['login'])){
+
+  }
 
   echo $objNavi->DispHeader();
   require_once(DOCUMENT_ROOT . '/view/login/view_login.php');

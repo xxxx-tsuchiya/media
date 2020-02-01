@@ -24,9 +24,6 @@
     header("Location: index.php");
   }
 
-  // DB接続
-  $mysqli = $objDB->DatabaseConnect();
-
 
   // POSTされたデータを取得
   $arrData['postData']['name1']           = $_POST['name1'];
